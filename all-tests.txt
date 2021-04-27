@@ -1,0 +1,4 @@
+robot main-nav.robot & 
+\ robot --variable browser:firefox main-nav.robot &
+\ robot --variable lang:en/ --variable endURL:en/ main-nav.robot &
+

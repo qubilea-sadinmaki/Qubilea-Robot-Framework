@@ -1,0 +1,9 @@
+
+playwright-log.txt
+log.html
+output.xml
+report.html
+*.pyc
+.vscode/settings.json
+venv/
+*.png
