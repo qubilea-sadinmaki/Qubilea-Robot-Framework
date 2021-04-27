@@ -1,13 +1,19 @@
 # Qubilea-Robot-Framework
  Testautomation for Qubilea website
 
+ # Init
+ % python3 -m venv venv
+ % source venv/bin/activate
+ %(venv) pip install -r requirements.txt
+ %(venv) rfbrowser init
+
  # Use
  - All tests
- % source run.sh 
+  %(venv) source run.sh 
 
  - One testsuite (examples) 
- % robot main-nav.robot
+  %(venv) robot main-nav.robot
  or
- % robot --variable browser:firefox main-nav.robot
+  %(venv) robot --variable browser:firefox main-nav.robot
  or
- % robot --variable lang:en/ main-nav.robot
+  %(venv) robot --variable lang:en/ main-nav.robot
