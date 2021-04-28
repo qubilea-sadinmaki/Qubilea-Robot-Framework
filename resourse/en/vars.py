@@ -18,6 +18,7 @@ company_aux_nav="//ul[@id='menu-main-menu-en-1']//a[@href='https://qubilea.fi/en
 jobs_aux_nav="//ul[@id='menu-main-menu-en-1']//a[@href='https://qubilea.fi/en/jobs/']"
 #change lang
 changeLang='//li[@data-item-id="929-fi"]'
+all_contact_info="//html//section[@id='content']/div/div/div[7]/div/div[2]//a[@href='/company/']"
 
 #locators
 home_locator='OUR TESTING SERVICE'
