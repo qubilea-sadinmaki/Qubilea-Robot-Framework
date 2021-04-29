@@ -1,8 +1,6 @@
 *** Settings ***
-Library   Browser
 Resource         resourse/Init.resource
 Resource         resourse/Commonkeywords.resource
-Variables        resourse/${lang}vars.py
 Test Template    Test navigation item
 Test Setup       Open Homepage
 Suite Setup      Log Test Start
@@ -14,14 +12,14 @@ Suite Teardown   Log Test Complete
 
 *** Test Cases ***                SELECTOR          LOCATOR                       URL
 # MAIN NAVIGATION
-Verify services main nav          ${services}       ${services_locator}           ${servicesURL}
-Verify company main nav           ${company}        ${company_locator}            ${companyURL}
-Verify jobs main nav              ${jobs}           ${jobs_locator}               ${jobsURL}
-Verify home main nav              ${home}           ${home_locator}               ${homeURL}
+Verify services main nav          ${res.services}       ${res.services_locator}           ${res.servicesURL}
+Verify company main nav           ${res.company}        ${res.company_locator}            ${res.companyURL}
+Verify jobs main nav              ${res.jobs}           ${res.jobs_locator}               ${res.jobsURL}
+Verify home main nav              ${res.home}           ${res.home_locator}               ${res.homeURL}
 
 # AUXILLARY NAVIGATION
-Verify services auxillary nav          ${services_aux_nav}       ${services_locator}            ${servicesURL}
-Verify company auxillary nav           ${company_aux_nav}        ${company_locator}             ${companyURL}
-Verify jobs auxillary nav              ${jobs_aux_nav}           ${jobs_locator}                ${jobsURL}
-Verify home auxillary nav              ${home_aux_nav}           ${home_locator}                ${homeURL}
+Verify services auxillary nav          ${res.services_aux_nav}       ${res.services_locator}            ${res.servicesURL}
+Verify company auxillary nav           ${res.company_aux_nav}        ${res.company_locator}             ${res.companyURL}
+Verify jobs auxillary nav              ${res.jobs_aux_nav}           ${res.jobs_locator}                ${res.jobsURL}
+Verify home auxillary nav              ${res.home_aux_nav}           ${res.home_locator}                ${res.homeURL}
     

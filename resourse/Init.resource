@@ -1,26 +1,28 @@
 *** Settings ***
-Library   Browser
-Library    BuiltIn
+Library          Browser    auto_closing_level=TEST    #TESTSUITE    TESTCASE
+Library          BuiltIn
+Library          resource.py
 
 *** Variables ***
 ${baseURL}    https://qubilea.fi/
 ${endURL}     ${empty}
 ${lang}       fi/
-${defaultLang}    fi/
 ${browser}    chromium
 *** Keywords ***
 Open Homepage
-    IF    '${lang}' != '${defaultLang}'
+    IF    '${lang}' != 'fi/'
           ${endURL}=    Set Variable    ${lang}  
     END 
-
+    ${r}=    Get Language    ${lang} 
+    Set Suite Variable    ${res}    ${r} 
     Browser.New Browser    ${browser}    False
     Browser.New Page       ${baseURL}${endURL}
 
 Log Test Start
-    Log To Console         Start test : LANGUAGE:${lang} BROWSER:${browser}
+    Log To Console         Start test : DEFAULT LANGUAGE:${lang} BROWSER:${browser}
     Log To Console         ==============================================================================
 
 Log Test Complete
-    Log To Console         Test complete : LANGUAGE:${lang} BROWSER:${browser}
+    Log To Console         Test complete : DEFAULT LANGUAGE:${lang} BROWSER:${browser}
     Log To Console         ==============================================================================
+    
