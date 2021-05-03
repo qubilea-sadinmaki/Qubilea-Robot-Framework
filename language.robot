@@ -1,4 +1,7 @@
 *** Settings ***
+Documentation    Basic tests for Qubilea website. Site should stay on the same category
+...              when language is changed. FE. if you are on "company"-site you should be on
+...              the same site, only on different language.
 Resource         resourse/Init.resource
 Resource         resourse/Commonkeywords.resource
 Variables        resourse/resource.py

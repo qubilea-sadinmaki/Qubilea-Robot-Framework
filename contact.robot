@@ -1,4 +1,5 @@
 *** Settings ***
+Documentation    Basic tests for Qubilea website
 Library          Collections
 Resource         resourse/Init.resource
 Resource         resourse/Commonkeywords.resource
@@ -18,6 +19,7 @@ Verify has contact email
     Browser.Get Element    //a[@href='mailto:contact@qubilea.fi']
 
 Verify phonenumber
+    [Tags]    phonenumber
     @{elements}    Browser.Get Elements    ${res.phone}
     Length Should Be    ${elements}    2
     

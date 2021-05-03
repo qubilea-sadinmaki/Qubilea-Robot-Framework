@@ -6,4 +6,5 @@ report.html
 *.pyc
 .vscode/settings.json
 venv/
+output/
 *.png

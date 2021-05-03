@@ -1,4 +1,6 @@
 *** Settings ***
+Documentation    Basic tests for Qubilea website. Verifies sites main navigation works
+...              as expected.
 Resource         resourse/Init.resource
 Resource         resourse/Commonkeywords.resource
 Test Template    Test navigation item

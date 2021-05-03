@@ -1,5 +1,5 @@
 *** Settings ***
-Library          Browser    auto_closing_level=TEST    #TESTSUITE    TESTCASE
+Library          Browser    auto_closing_level=MANUAL    #SUITE, TEST
 Library          BuiltIn
 Library          resource.py
 

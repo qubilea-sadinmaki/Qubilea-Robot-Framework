@@ -1,12 +1,6 @@
 #!/usr/bin/env bash
 
-robot main-navigation.robot
-robot --variable browser:firefox main-navigation.robot 
-robot --variable lang:en/ main-navigation.robot
-robot --variable browser:firefox --variable lang:en/ main-navigation.robot
-robot contact.robot
-robot --variable browser:firefox contact.robot 
-robot --variable lang:en/ contact.robot
-robot --variable browser:firefox --variable lang:en/ contact.robot
-robot language.robot
-robot --variable browser:firefox language.robot
+robot -d output/fi/chrome/ main-navigation.robot contact.robot language.robot other.robot
+robot -d output/fi/firefox/ -v browser:firefox main-navigation.robot contact.robot language.robot other.robot
+robot -d output/en/chrome/ -v lang:en/ -e phonenumber main-navigation.robot contact.robot
+robot -d output/en/firefox/ -v lang:en/ -v browser:firefox -e phonenumber main-navigation.robot contact.robot
