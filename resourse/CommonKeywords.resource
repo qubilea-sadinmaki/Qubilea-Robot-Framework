@@ -20,5 +20,5 @@ Navigate To
     [Documentation]    Clicks through all items in the list, one by one 
     FOR	${selector}	IN	@{selectors}
         Browser.Click    ${selector} 
-#        Sleep    2    reason=None   	
+        Sleep    1    reason=None   	
     END

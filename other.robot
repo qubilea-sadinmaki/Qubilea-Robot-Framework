@@ -4,27 +4,42 @@ Library          Collections
 Resource         resourse/Init.resource
 Resource         resourse/Commonkeywords.resource
 Library          Browser
-
-Suite Setup      Run Keywords    Open Homepage    Log Test Start
+Test Setup       Open Homepage
+Suite Setup      Log Test Start
 Suite Teardown   Log Test Complete
 
 *** Variables ***
 
 *** Keywords ***
-
-*** Test Cases ***                
-Navigate from home to
-    [Documentation]   Verifies image-gallery works as expected.
+Verify Story
+    [Arguments]    ${url}    ${last_img_src}
+    [Documentation]   Verifies story and image-gallery works as expected.
     Navigate To    ${res.jobs}
-    ...            a[href="https://qubilea.fi/panssarivaunulla-pornaisissa/"] 
+    ...            a[href='${url}'] 
     ...            div.fusion-gallery-image
 
-    Browser.Get Url    ==    https://qubilea.fi/panssarivaunulla-pornaisissa/
+    Browser.Get Url    ==    ${url}
 
     @{thumbnails}=    Browser.Get Elements    div.ilightbox-thumbnail
 
     Navigate To    @{thumbnails}    
-    Browser.Get Element   div.ilightbox-container > img[src="https://qubilea.fi/wp-content/uploads/2020/06/26f2399e-b56a-4fa5-9904-02e5df422034-scaled.jpg"] 
+    Browser.Get Element   div.ilightbox-container > img[src='${last_img_src}'] 
+    Browser.Click    a.ilightbox-close
+
+*** Test Cases ***
+Verify biking story
+    Verify Story    https://qubilea.fi/pyoraretkeilya-nuuksiossa/    
+    ...             https://qubilea.fi/wp-content/uploads/2019/08/img_20190823_093805-scaled.jpg
+
+Verify fishing story
+    Verify Story    https://qubilea.fi/kuhan-kalastimme/    
+    ...             https://qubilea.fi/wp-content/uploads/2020/08/unadjustednonraw_thumb_3c.jpg
+
+    
+
+Verify panzer story
+    Verify Story    https://qubilea.fi/panssarivaunulla-pornaisissa/    
+    ...             https://qubilea.fi/wp-content/uploads/2020/06/26f2399e-b56a-4fa5-9904-02e5df422034-scaled.jpg
 
 
     
