@@ -35,8 +35,6 @@ Verify fishing story
     Verify Story    https://qubilea.fi/kuhan-kalastimme/    
     ...             https://qubilea.fi/wp-content/uploads/2020/08/unadjustednonraw_thumb_3c.jpg
 
-    
-
 Verify panzer story
     Verify Story    https://qubilea.fi/panssarivaunulla-pornaisissa/    
     ...             https://qubilea.fi/wp-content/uploads/2020/06/26f2399e-b56a-4fa5-9904-02e5df422034-scaled.jpg
