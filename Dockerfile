@@ -4,5 +4,4 @@ WORKDIR /run
 
 COPY . .
 
-ENTRYPOINT [ "robot" ] 
-
+ENTRYPOINT [ "robot" ]

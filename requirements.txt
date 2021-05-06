@@ -1,2 +1,2 @@
 robotframework==4.0.1
-robotframework-browser==4.3.0
+robotframework-browser==4.3.0 
