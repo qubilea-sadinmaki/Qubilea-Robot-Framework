@@ -5,3 +5,4 @@ WORKDIR /run
 COPY . .
 
 ENTRYPOINT ["robot"]
+
