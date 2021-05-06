@@ -8,4 +8,5 @@ report.html
 venv/
 output/
 report/
+dockerfiles/
 *.png
