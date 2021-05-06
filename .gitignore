@@ -7,4 +7,5 @@ report.html
 .vscode/settings.json
 venv/
 output/
+report/
 *.png

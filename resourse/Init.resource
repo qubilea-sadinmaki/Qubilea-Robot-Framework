@@ -1,5 +1,5 @@
 *** Settings ***
-Library          Browser    auto_closing_level=MANUAL    #SUITE, TEST
+Library          Browser    auto_closing_level=TEST    #SUITE, TEST
 Library          BuiltIn
 Library          resource.py
 
@@ -8,6 +8,7 @@ ${baseURL}    https://qubilea.fi/
 ${endURL}     ${empty}
 ${lang}       fi/
 ${browser}    chromium
+${headless}    False
 *** Keywords ***
 Open Homepage
     IF    '${lang}' != 'fi/'
@@ -15,7 +16,7 @@ Open Homepage
     END 
     ${r}=    Get Language    ${lang} 
     Set Suite Variable    ${res}    ${r} 
-    Browser.New Browser    ${browser}    False
+    Browser.New Browser    ${browser}    ${headless}
     Browser.New Page       ${baseURL}${endURL}
 
 Log Test Start

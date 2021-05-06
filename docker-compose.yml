@@ -1,0 +1,34 @@
+version: '3'
+services: 
+    chrome_fi:
+        image: rf_qubilea
+        build: ./
+        volumes:
+          - ./:/run
+        command: -v headless:True -d report/fi/chrome/ main-navigation.robot contact.robot language.robot stories.robot
+        ipc: host
+        security_opt: 
+          - seccomp=chrome.json
+    firefox_fi:
+          image: rf_qubilea
+          build: ./
+          volumes:
+            - ./:/run
+          command: -v headless:True -d report/fi/firefox/ -v browser:firefox main-navigation.robot contact.robot language.robot stories.robot
+    chrome_en:
+          image: rf_qubilea
+          build: ./
+          volumes:
+            - ./:/run
+          command: -v headless:True -d report/en/chrome/ -v lang:en/ -e phonenumber main-navigation.robot contact.robot
+          ipc: host
+          security_opt: 
+            - seccomp=chrome.json
+    # firefox_en:
+    #       image: rf_qubilea
+    #       build: ./
+    #       volumes:
+    #         - ./:/run
+    #       command: -v headless:True -d report/en/firefox/ -v lang:en/ -v browser:firefox -e phonenumber main-navigation.robot contact.robot
+
+    
