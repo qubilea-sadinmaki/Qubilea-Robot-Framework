@@ -24,3 +24,6 @@
   -v $(pwd):/run \
   rf_qubilea \
   -v headless:True -d report/fi/chrome/ main-navigation.robot
+
+- Runs multiple testsuites parallel
+  docker-compose up
