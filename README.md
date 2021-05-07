@@ -1,5 +1,5 @@
 # Qubilea-Robot-Framework
- Testautomation for Qubilea website
+ Testautomation demo testing Qubilea website. Using Browser library
 
  # Init
     python3 -m venv venv
