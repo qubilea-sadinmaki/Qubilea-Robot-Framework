@@ -9,4 +9,6 @@ venv/
 output/
 report/
 dockerfiles/
+pabot_results/
 *.png
+.pabotsuitenames

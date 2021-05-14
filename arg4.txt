@@ -1,0 +1,5 @@
+-d report/en/firefox/ 
+-v lang:en/ 
+-v browser:firefox 
+-e phonenumber
+-v headless:True

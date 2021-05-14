@@ -8,6 +8,7 @@ Variables        resourse/resource.py
 Test Template    Test navigation item
 Suite Setup      Run Keywords    Open Homepage    Log Test Start
 Suite Teardown   Log Test Complete
+Force Tags       FI
 
 *** Variables ***
 

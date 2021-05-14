@@ -1,0 +1,2 @@
+-d report/fi/chrome/
+-v headless:True

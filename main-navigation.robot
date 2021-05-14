@@ -7,6 +7,7 @@ Test Template    Test navigation item
 Test Setup       Open Homepage
 Suite Setup      Log Test Start
 Suite Teardown   Log Test Complete
+Force Tags       mainnav    auxnav
 
 *** Variables ***
 

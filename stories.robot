@@ -7,6 +7,7 @@ Library          Browser
 Test Setup       Open Homepage
 Suite Setup      Log Test Start
 Suite Teardown   Log Test Complete
+Force Tags       FI
 
 *** Variables ***
 
