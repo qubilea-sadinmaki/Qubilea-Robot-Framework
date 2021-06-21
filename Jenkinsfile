@@ -4,7 +4,7 @@ node {
      myTestContainer.pull()
      myTestContainer.inside {
       //  sh 'source run.sh'
-      sh 'robot -d report/fi/chrome/ main-navigation.robot contact.robot language.robot stories.robot'
+      sh 'sudo robot -d report/fi/chrome/ main-navigation.robot contact.robot language.robot stories.robot'
      }
    }                                                                          
 } 
