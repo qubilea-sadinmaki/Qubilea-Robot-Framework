@@ -5,20 +5,20 @@ node {
      sh "git rev-parse --short HEAD > .git/commit-id"
      commit_id = readFile('.git/commit-id').trim()
    }
+  stage('test Firefox - FI') { 
+    //run test in container
+    sh 'docker run --rm \
+    -v $(pwd):/run \
+    marketsquare/robotframework-browser:v5.1.0 \
+    bash -c "robot -v headless:True -d /run/report/fi/firefox/ -v browser:firefox /run/tests/"'                                 
+   }
    stage('test Chrome - FI') { 
     //run test in container
     sh 'docker run --rm \
     -v $(pwd):/run \
     marketsquare/robotframework-browser:v5.1.0 \
     bash -c "robot -v headless:True --outputdir /run/report/fi/chrome/ /run/tests"'                                 
-   } 
-   stage('test Firefox - FI') { 
-    //run test in container
-    sh 'docker run --rm \
-    -v $(pwd):/run \
-    marketsquare/robotframework-browser:v5.1.0 \
-    bash -c "robot -v headless:True -d /run/report/fi/firefox/ -v browser:firefox /run/tests/"'                                 
-   } 
+   }  
    stage('test Chrome - EN') { 
     //run test in container
     sh 'docker run --rm \
