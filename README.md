@@ -12,18 +12,24 @@
   (venv) source run.sh 
 
  - One testsuite (examples) 
-  (venv) robot main-nav.robot
+  (venv) robot tests/main-nav.robot
  or
-  (venv) robot --variable browser:firefox main-nav.robot
+  (venv) robot --variable browser:firefox tests/main-nav.robot
  or
-  (venv) robot --variable lang:en/ main-nav.robot
+  (venv) robot --variable lang:en/ tests/main-nav.robot
 
 # Docker (exapmples)
 - Runs one testsuite on chrome
   docker run --rm \
   -v $(pwd):/run \
   rf_qubilea \
-  -v headless:True -d report/fi/chrome/ main-navigation.robot
+  -v headless:True -d report/fi/chrome/ tests/main-navigation.robot
 
 - Runs multiple testsuites parallel
   docker-compose up
+
+docker run --rm \
+  -v $(pwd):/run \
+    marketsquare/robotframework-browser:v5.1.0 \
+      bash -c "robot -v headless:True --outputdir /run/report/fi/chrome/ /run/tests"
+

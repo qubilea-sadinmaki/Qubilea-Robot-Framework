@@ -1,4 +1,5 @@
 -d report/en/chrome/ 
 -v lang:en/ 
+-i EN
 -e phonenumber 
 -v headless:True

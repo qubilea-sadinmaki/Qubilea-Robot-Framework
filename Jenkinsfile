@@ -6,9 +6,15 @@ node {
      commit_id = readFile('.git/commit-id').trim()
    }
    stage('test') { 
-     def myEnv = docker.build 'my-environment:snapshot'
-     myEnv.inside("--rm") { // using linking, mysql will be available at host: mysql, port: 3306
-          sh '--version'                     
-     }                                   
+    def container = docker.image('marketsquare/robotframework-browser:v5.1.0').inside('--rm -v $(pwd):/run bash -c "robot -v headless:True --outputdir /run/report/fi/chrome/ /run/tests"') {
+        stage('Check') {
+            sh 'ls'
+        }
+    }                                  
    }                                                                            
 } 
+
+// docker run --rm \
+//   -v $(pwd):/run \
+//     marketsquare/robotframework-browser:v5.1.0 \
+//       bash -c "robot -v headless:True --outputdir /run/report/fi/chrome/ /run/tests"

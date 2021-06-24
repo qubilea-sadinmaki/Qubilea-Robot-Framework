@@ -5,7 +5,7 @@ services:
         build: ./
         volumes:
           - ./:/run
-        command: -v headless:True -d report/fi/chrome/ main-navigation.robot contact.robot language.robot stories.robot
+        command: -v headless:True -d report/fi/chrome/ tests/
         ipc: host
         security_opt: 
           - seccomp=chrome.json
@@ -14,13 +14,13 @@ services:
           build: ./
           volumes:
             - ./:/run
-          command: -v headless:True -d report/fi/firefox/ -v browser:firefox main-navigation.robot contact.robot language.robot stories.robot
+          command: -v headless:True -d report/fi/firefox/ -v browser:firefox tests/
     chrome_en:
           image: rf_qubilea
           build: ./
           volumes:
             - ./:/run
-          command: -v headless:True -d report/en/chrome/ -v lang:en/ -e phonenumber main-navigation.robot contact.robot
+          command: -v headless:True -d report/en/chrome/ -v lang:en/ -i EN -e phonenumber tests/
           ipc: host
           security_opt: 
             - seccomp=chrome.json

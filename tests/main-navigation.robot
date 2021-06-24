@@ -1,13 +1,13 @@
 *** Settings ***
 Documentation    Basic tests for Qubilea website. Verifies sites main navigation works
 ...              as expected.
-Resource         resourse/Init.resource
-Resource         resourse/Commonkeywords.resource
+Resource         ../resourse/Init.resource
+Resource         ../resourse/Commonkeywords.resource
 Test Template    Test navigation item
 Test Setup       Open Homepage
 Suite Setup      Log Test Start
 Suite Teardown   Log Test Complete
-Force Tags       mainnav    auxnav
+Force Tags       mainnav    auxnav    FI    EN
 
 *** Variables ***
 

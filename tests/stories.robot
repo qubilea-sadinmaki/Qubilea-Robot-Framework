@@ -1,8 +1,8 @@
 *** Settings ***
 Documentation    Basic tests for Qubilea website. 
 Library          Collections
-Resource         resourse/Init.resource
-Resource         resourse/Commonkeywords.resource
+Resource         ../resourse/Init.resource
+Resource         ../resourse/Commonkeywords.resource
 Library          Browser
 Test Setup       Open Homepage
 Suite Setup      Log Test Start

@@ -1,5 +1,6 @@
 -d report/en/firefox/ 
 -v lang:en/ 
 -v browser:firefox 
+-i EN
 -e phonenumber
 -v headless:True

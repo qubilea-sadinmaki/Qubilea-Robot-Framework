@@ -10,14 +10,18 @@ ${lang}       fi/
 ${browser}    chromium
 ${headless}    False
 *** Keywords ***
-Open Homepage
-    IF    '${lang}' != 'fi/'
-          ${endURL}=    Set Variable    ${lang}  
+Open Homepage  
+    IF  '${lang}' != 'fi/'
+        ${endURL}=    Set Variable    ${lang}  
     END 
+
     ${r}=    Get Language    ${lang} 
     Set Suite Variable    ${res}    ${r} 
     Browser.New Browser    ${browser}    ${headless}
     Browser.New Page       ${baseURL}${endURL}
+
+Change Language
+    ${endURL}=    Set Variable    ${lang}
 
 Log Test Start
     Log To Console         Start test : DEFAULT LANGUAGE:${lang} BROWSER:${browser}

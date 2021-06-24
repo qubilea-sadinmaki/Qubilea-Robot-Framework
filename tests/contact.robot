@@ -1,11 +1,11 @@
 *** Settings ***
 Documentation    Basic tests for Qubilea website
 Library          Collections
-Resource         resourse/Init.resource
-Resource         resourse/Commonkeywords.resource
-
+Resource         ../resourse/Init.resource
+Resource         ../resourse/Commonkeywords.resource
 Suite Setup      Run Keywords    Open Homepage    Log Test Start
 Suite Teardown   Log Test Complete
+Force Tags       FI    EN
 
 *** Variables ***
 
