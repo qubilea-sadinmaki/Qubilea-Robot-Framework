@@ -6,7 +6,7 @@ node {
      commit_id = readFile('.git/commit-id').trim()
    }
    stage('test') { 
-    def container = docker.image('marketsquare/robotframework-browser:v5.1.0').inside('--rm -v /var/jenkins_home/workspace/qubilea_rf_browser_library:/run -w /run/tests bash -c "robot -v headless:True --outputdir /run/report/fi/chrome/ /run/tests"') {
+    def container = docker.image('marketsquare/robotframework-browser:v5.1.0').inside('--rm -v $env.WORKSPACE:/run -w /run/tests bash -c "robot -v headless:True --outputdir /run/report/fi/chrome/ /run/tests"') {
         stage('Check') {
             sh 'ls'
         }
