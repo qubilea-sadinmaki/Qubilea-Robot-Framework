@@ -18,7 +18,8 @@ node {
     -v $(pwd):/run \
     marketsquare/robotframework-browser:v5.1.0 \
     bash -c "robot -v headless:True -d /run/report/en/chrome/ -v lang:en/ -i EN -e phonenumber /run/tests/"'                                 
-   } 
+   }
+  // tests fail on Firefox (version problem?) 
   // stage('test Firefox - FI') { 
   //   //run test in container
   //   sh 'docker run --rm \
@@ -33,4 +34,4 @@ node {
   //   marketsquare/robotframework-browser:v5.1.0 \
   //   bash -c "robot -v headless:True -d /run/report/en/firefox/ -v lang:en/ -v browser:firefox -i EN -e phonenumber /run/tests/"'                                 
   //  }                                                                           
-} 
+}  
